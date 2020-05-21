@@ -1,9 +1,10 @@
 module.exports = {
   pathPrefix: "/blog",
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Ilker Cakir Blog`,
+    description: `A personal blog to share knowledge, thoughts.`,
+    author: `@cakirilker`,
+    siteUrl: 'https://cakirilker.github.io/blog/',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -43,9 +44,39 @@ module.exports = {
           globPatterns: ['**/*']
         }
       }
+    },
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        output: `/sitemap.xml`,
+        exclude: ['/dev-404-page', '/404', '/offline-plugin-app-shell-fallback'],
+        query: `
+        {
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+      }`,
+        resolveSiteUrl: ({ site, allSitePage }) => {
+          //Alternativly, you may also pass in an environment variable (or any location) at the beginning of your `gatsby-config.js`.
+          return site.siteMetadata.siteUrl
+        },
+        serialize: ({ site, allSitePage }) =>
+          allSitePage.nodes.map(node => {
+            return {
+              url: `${site.siteMetadata.siteUrl}${node.path}`,
+              changefreq: `daily`,
+              priority: 0.7,
+            }
+          })
+      }
     }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }
