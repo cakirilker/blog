@@ -1,15 +1,17 @@
 import React from "react"
-import { Helmet } from "react-helmet"
-import Layout from "../components/layout"
+import Layout from "@layouts/layout"
+import { SEO } from "@components";
 
 const PostTemplate = ({
-  data, // this prop will be injected by the GraphQL query we'll write in a bit
+  data,
 }) => {
-  const { markdownRemark: post } = data // data.markdownRemark holds your post data
+  const { markdownRemark: post } = data;
   return (
     <Layout>
+      <SEO title={post.frontmatter.title}></SEO>
+
       <div className="blog-post-container">
-        <Helmet title={`Your Blog Name - ${post.frontmatter.title}`} />
+        {/* <Helmet title={`${post.frontmatter.title} - Ilker Cakir Blog`} /> */}
         <div className="blog-post">
           <h1>{post.frontmatter.title}</h1>
           <div
@@ -17,6 +19,9 @@ const PostTemplate = ({
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
         </div>
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Button
+        </button>
       </div>
     </Layout>
   )

@@ -7,6 +7,35 @@ module.exports = {
     siteUrl: 'https://cakirilker.github.io/blog/',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "@src": "src",
+          "@components": "src/components",
+          "@layouts": "src/layouts",
+          "@pages": "src/pages",
+          "@sass": "src/sass",
+          "@templates": "src/templates",
+          "@posts": "blog",
+        },
+        extensions: [
+          'js',
+          'jsx',
+          'tsx',
+          'css',
+          'scss',
+          'md'
+        ]
+      }
+    },
+    `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        postCssPlugins: [require('tailwindcss'), require('./tailwind.config')],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
     {

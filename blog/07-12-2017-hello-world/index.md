@@ -1,7 +1,8 @@
 ---
-path: "/getting-started"
+path: "/hello-world"
 date: 2017-07-12T17:12:33.962Z
-title: "My First Gatsby Post"
+title: "Hello World"
+tags: ["photography", "travel", "winter"]
 ---
 
 Officia reprehenderit exercitation voluptate labore eu Lorem laborum ipsum magna. Proident laboris voluptate non tempor ipsum velit. Lorem tempor cillum cillum eiusmod laborum aliquip. Dolor sint non aliquip sint occaecat proident non. Velit ex mollit quis sint proident sit elit enim sit nostrud deserunt anim.
