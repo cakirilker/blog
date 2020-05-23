@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 
 export default function HTML(props) {
-  console.warn(props);
   return (
     <html className="text-gray-900 antialiased leading-tight" {...props.htmlAttributes}>
       <head>
