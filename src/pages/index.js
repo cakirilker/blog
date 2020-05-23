@@ -1,12 +1,13 @@
 import React from "react"
 import Layout from "@layouts/layout"
 import { SEO, PostPreview } from "@components"
+import { graphql } from "gatsby";
 
 const Index = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark;
   return (
     <Layout>
-      <SEO title="Welcome" />
+      <SEO />
       <div className="blog-posts">
         {posts
           .filter(post => post.node.frontmatter.title.length > 0)

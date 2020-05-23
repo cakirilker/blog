@@ -5,8 +5,8 @@ import React from "react"
 const Header = ({ siteTitle }) => (
   <header className="flex items-center justify-between flex-wrap bg-midnightblue text-white p-6">
     <div>
-      <h1>
-        <Link to="/">
+      <h1 className="m-0 text-lg">
+        <Link className="text-white" to="/">
           {siteTitle}
         </Link>
       </h1>
