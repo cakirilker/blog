@@ -4,7 +4,7 @@ module.exports = {
     title: `Ilker Cakir's Blog`,
     description: `A personal blog to share knowledge, thoughts.`,
     author: `@cakirilker`,
-    siteUrl: 'https://cakirilker.github.io/blog/',
+    siteUrl: 'https://cakirilker.github.io',
   },
   plugins: [
     {
