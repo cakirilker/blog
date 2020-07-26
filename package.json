@@ -32,6 +32,7 @@
     "react-helmet": "^6.0.0"
   },
   "devDependencies": {
+    "gatsby-remark-images": "^3.3.18",
     "gh-pages": "^2.2.0",
     "prettier": "2.0.5",
     "tailwindcss": "^1.4.6"
