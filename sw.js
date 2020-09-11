@@ -196,6 +196,10 @@ self.__precacheManifest = [
     "revision": "fe5c3d1300484b259f4aa6236315ceab"
   },
   {
+    "url": "sitemap.xml",
+    "revision": "70831639a8d6cfc3923f4f17f6e40225"
+  },
+  {
     "url": "static/4d182f6f5810588630547088335ef5d7/12f09/eslint-answers.png"
   },
   {
