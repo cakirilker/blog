@@ -8,6 +8,13 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-101860874-5",
+        optimizeId: "GTM-WZD8XRB"
+      },
+    },
+    {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
@@ -45,12 +52,18 @@ module.exports = {
         name: "posts",
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `Ilker Cakir's - Blog`,
         short_name: `Ilker Cakir's - Blog`,
         start_url: `/`,
         background_color: `#663399`,
@@ -110,6 +123,17 @@ module.exports = {
               escapeEntities: {},
             },
           },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 590,
+              showCaptions: ['title', 'alt'],
+              markdownCaptions: true,
+            },
+          },
         ],
       },
     },
@@ -153,6 +177,6 @@ module.exports = {
             }
           })
       }
-    }
+    },
   ],
 }
